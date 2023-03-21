@@ -28,7 +28,7 @@ main {
     color: var(--white);
     font-size: 20px;
     border-radius: 30px;
-
+    position: absolute;
 }
 
 section {
@@ -65,8 +65,12 @@ section {
     cursor: pointer;
 }
 
-.invisivel {
+.invisible {
     display: none;
     pointer-events: none;
 
+}
+
+.invisibleNumber {
+    color: transparent;
 }
