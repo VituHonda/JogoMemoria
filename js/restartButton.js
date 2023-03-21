@@ -3,7 +3,7 @@ let restartButton = document.querySelector("#restart")
 restartButton.addEventListener("click", function () {
 
     deleteSquares()
-    restartButton.classList.add("invisible")
+    restartInvisible()
     createSquares(5)
     setTimeout(invisibleNumber, 1000)
     // +3s from invisible
@@ -12,3 +12,11 @@ restartButton.addEventListener("click", function () {
     setTimeout(clickOrder, 4000)
 
 })
+
+function restartVisible() {
+    restartButton.classList.remove("invisible")
+}
+
+function restartInvisible() {
+    restartButton.classList.add("invisible")
+}

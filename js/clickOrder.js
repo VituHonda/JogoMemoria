@@ -11,13 +11,22 @@ function clickOrder() {
                 
                 pauseMovement()
                 visisbleNumber()
-                let button = document.querySelector("#restart")
-                button.classList.remove("invisible")
+                restartVisible()
         
             } else {
 
-                squares[i].classList.add("invisible")
-                order++
+                if(order == (squares.length - 1)) {
+
+                    squares[i].classList.add("invisible")
+                    alert("venceu")
+                    startVisible()
+
+                } else {
+
+                    squares[i].classList.add("invisible")
+                    order++
+                    
+                }
 
             }
 
