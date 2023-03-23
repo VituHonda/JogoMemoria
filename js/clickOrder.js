@@ -12,17 +12,22 @@ function clickOrder() {
                 pauseMovement()
                 visisbleNumber()
                 restartVisible()
-        
+                emptyPoints()
+
             } else {
 
                 if(order == (squares.length - 1)) {
 
                     squares[i].classList.add("invisible")
-                    alert("venceu")
+                    deleteSquares()
                     startVisible()
-
+                    addPoints()
+                    addVPoints()
+                    alert("venceu")
+                    
                 } else {
 
+                    addPoints()
                     squares[i].classList.add("invisible")
                     order++
                     

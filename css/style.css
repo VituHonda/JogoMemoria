@@ -1,14 +1,12 @@
 :root {
-
     --white: #ffffff;
-    --black: #000000;
+    --black: #222222;
     --arctic: #82eefd;
     --sapphire: #52B2bf;
     --cerulean: #0492c2;
     --ocean: #016064;
     --cloud: #c5c6d0;
 }
-
 
 main {
     width: 100%;
@@ -17,6 +15,29 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+section {
+    width: 100%;
+    height: 100%;
+    background: var(--cloud);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container__game {
+    background: var(--cloud);
+    width: 90%;
+    height: 90%;
+    border: var(--black) solid 3px;   
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    overflow: hidden;
+    position: absolute;
+    border-radius: 10px;
+    flex-wrap: wrap;
 }
 
 .button {
@@ -29,32 +50,22 @@ main {
     font-size: 20px;
     border-radius: 30px;
     position: absolute;
+    z-index: 100;
 }
 
-section {
-    width: 85%;
-    height: 85%;
-    background: var(--cloud);
-    border-radius: 30px;
+.score {
+    left: 0;
+    top: 0;
+    position: absolute;
+    font-size: 2em;
+    margin-left: 3em;
+    font-weight: bold;
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container__game {
-    width: 90%;
-    height: 90%;
-    border: var(--black) solid 3px;   
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    overflow: hidden;
 }
 
 .squares {
-    width: 100px;
-    height: 100px;
-    background: var(--ocean);
+    min-width: 3em;
+    min-height: 3em;
     margin: 10px;
     display: flex;
     align-items: center;
@@ -63,14 +74,48 @@ section {
     color: var(--white);
     font-size: clamp(20px, 30px, 40px);
     cursor: pointer;
+    border-radius: 10px;
+}
+
+.squares__arctic {
+    background-color: var(--arctic);
+    color: var(--black);
+}
+
+.squares__cerulean {
+    background-color: var(--cerulean);
+}
+
+.squares__ocean {
+    background-color: var(--ocean);
+}
+
+.squares__sapphire {
+    background-color: var(--sapphire);
 }
 
 .invisible {
-    display: none;
+    color: transparent;
+    background-color: transparent;
     pointer-events: none;
-
+    transition: 0.5s;
 }
 
 .invisibleNumber {
     color: transparent;
+}
+
+@media screen and (max-width: 700px) {
+
+    .container__game {
+        flex-direction: column;
+        align-items: none;
+        justify-content: none;
+    }
+
+    .squares {
+        min-height: 2em;
+        min-width: 2em;
+    }
+
 }
